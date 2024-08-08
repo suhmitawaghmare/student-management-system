@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Student</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 90%;
+        max-width: 500px;
+        text-align: left;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    button {
+        background-color: #ffcccc;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        align-self: flex-start;
+    }
+
+    button:hover {
+        background-color: #ffb3b3;
+        transform: translateY(-2px);
+    }
+
+    button:active {
+        background-color: #ff9999;
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Student here...</h2>
+        <form action="/saveStudent" th:object="${student}" method="post">
+            <div>
+                <label>NAME: </label>
+                <input type="text" th:field="*{name}"></input>
+            </div>
+            <div>
+                <label>AGE: </label>
+                <input type="number" th:field="*{age}"></input>
+            </div>
+            <div>
+                <label>EMAIL: </label>
+                <input type="text" th:field="*{email}"></input>
+            </div>
+            <div>
+                <label>ADDRESS: </label>
+                <input type="text" th:field="*{address}"></input>
+            </div>
+            
+              <div>
+                <label>Trainer: </label>
+                <select th:field="*{trainer}">
+                <option th:each="trainer: ${trainers}" th:value="${trainer.tid}" th:text="${trainer.name}" th:selected="${trainer.tid} == ${student.trainer.tid}"></option>
+                </select>
+                </div>
+            
+            <div>
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

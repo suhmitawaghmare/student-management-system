@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome Page</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: #333;
+    }
+
+    .container {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    button {
+        background-color: #ffcccc;
+        color: #333;
+        border: none;
+        padding: 15px 32px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #ffb3b3;
+        transform: translateY(-2px);
+    }
+
+    button:active {
+        background-color: #ff9999;
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome All to Cyber Success</h2>
+        <div class="button-container">
+            <a href="/viewStudent2"><button>Student</button></a>
+            <a href="/viewTrainer2"><button>Trainer</button></a>
+        </div>
+    </div>
+    
+</body>
+</html>
